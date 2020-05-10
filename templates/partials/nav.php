@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light blue-gradient">
-  <a class="navbar-brand" href="students.php">
+  <a class="navbar-brand" href="index.php">
   <img src="/OSS_CW2/img/my_logo.png" width="50" height="50" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
