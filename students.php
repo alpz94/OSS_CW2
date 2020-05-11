@@ -6,6 +6,10 @@ CO551 Open Source Systems -->
    include("_includes/dbconnect.inc");
    include("_includes/functions.inc");
 
+   //test what we are getting through in $_POST
+   //var_dump($_POST);
+
+   
 
    // check logged in
    if (isset($_SESSION['id'])) {
@@ -14,7 +18,7 @@ CO551 Open Source Systems -->
       echo template("templates/partials/nav.php");
 
       // Build SQL statment that selects a student's modules
-      $sql = "select * from student;";
+      $sql = "SELECT * FROM student;";
 
       $result = mysqli_query($conn,$sql);
 
@@ -28,25 +32,29 @@ CO551 Open Source Systems -->
       while($row = mysqli_fetch_array($result)) {
          $data['content'] .= "<tr><td> $row[studentid] </td><td> $row[dob] </td>";
          $data['content'] .= "<td> $row[firstname] </td><td> $row[lastname] </td>";
-         $data['content'] .= "<td> $row[house] </td><td> $row[town] </td><td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td><td><input type='checkbox' name='Select[$row[studentid]]' </td></tr>";
+         $data['content'] .= "<td> $row[house] </td><td> $row[town] </td><td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td><td><input type='checkbox' name='delete[$row[studentid]]' /></td></tr>";
       }
       $data['content'] .= "</table>";
-      $data['content'] .= '<input type="submit" name="delete" value="Delete Records">';
+      $data['content'] .= '<input type="submit" value="Delete">';
+
       $data['content'] .= "</form>";
 
       if (!empty($_POST['delete']))
       {
-         foreach($_POST['delete'] as $student => $value)
+         foreach($_POST['delete'] as $studentid => $value)
          {
-            //implement mysql delete here
+            $sql = "DELETE FROM student WHERE studentid= '$studentid';";
 
-            echo "Student = " . $student . "<br />";
+            $result = mysqli_query($conn,$sql);
 
-            echo $sql;
+            echo "Student = " . $studentid . " has been successfully deleted.<br />";
+
+            //echo $sql;
 
             //setup a confirmation message here in a variable
          }
       }
+
       // render the template
       echo template("templates/default.php", $data);
 
