@@ -14,6 +14,16 @@ CO551 Open Source Systems -->
 
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
+?>
+<!-- Jumbotron -->
+<div class="container-md">
+   <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
+      <h1 class="card-title h1">Students Records</h1>
+      <p class="card-text">In this page you can modify the student table by modifying its records.</p>
+   </div>
+</div>
+
+<?php
 
       // Build SQL statment that selects all student records
       $sql = "SELECT * FROM student;";
