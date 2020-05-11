@@ -6,9 +6,7 @@
 
    <?php echo $message; ?>
 
-</div>
-
-<div class="card">
+   <div class="card text-center" style="width: 18rem;">
   <div class="card-body">
    <div class="col-auto my-1">
       <form name="frmLogin" action="authenticate.php" method="post">
@@ -26,12 +24,4 @@
    </div>
 </div>
 </div>
-
-<!-- <div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Panel title</h5>
-    <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-    <a class="card-link">Card link</a>
-    <a class="card-link">Another link</a>
-  </div>
-</div> -->
+</div>
