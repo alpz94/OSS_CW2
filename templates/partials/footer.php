@@ -1,23 +1,30 @@
     <footer class="small bg-light">
       <div class="container py-3 py-sm-5">
         <div class="row">
-            <div class="col-8">
+            <div class="col-4">
                 <h6>Information</h6>
                 <ul class="list-unstyled">
                     <li>Bucks New University</li>
-                    <li>High Wycombe</li>
+                    <li>High Wycombe &copy; 2020</li>
+                    <li> OSS-CW2 Portal, Inc.</li>
+                    <li>&copy; 2020</li>
                     <li>Created by Ana Lucia Petinga Zorro</li>
                 </ul>
             </div>
             <div class="col-4">
                 <h6>Quick links</h6>
                 <ul class="list-unstyled">
-                    <li><a href="#">Portal</a></li>
-                    <li><a href="#">My account</a></li>
-                    <li>&copy; 2020 OSS-CW2 Portal, Inc.</li>
+                    <li><a href="index.php">Home Page</a></li>
+                    <li><a href="details.php">My Account</a></li>
                 </ul>
             </div>
-            <div style="width: 100%"><iframe width="25%" height="100" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Queen%20Alexandra%20Rd%2C%20High%20Wycombe%20HP11%202JZ+()&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Google Maps radius calculator</a></iframe></div><br />
+            <div class="col-4">
+                <h6>Map Location</h6>
+                <ul class="list-unstyled">
+                    <li><div style="width: 100%"><iframe width="100%" height="100%" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Queen%20Alexandra%20Rd%2C%20High%20Wycombe%20HP11%202JZ+()&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Google Maps radius calculator</a></iframe></div><br />
+                    </a></li>
+                </ul>
+            </div>
         </div>
       </div>
     </footer>
