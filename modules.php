@@ -1,5 +1,6 @@
+<!-- Author: Ana Lucia Petinga Zorro 
+CO551 Open Source Systems -->
 <?php
-
    include("_includes/config.inc");
    include("_includes/dbconnect.inc");
    include("_includes/functions.inc");
@@ -13,15 +14,14 @@
 ?>
 
 <!-- Jumbotron -->
-<div class="container-md">
+<section class="container-md">
    <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
       <h1 class="card-title h1">Modules Records</h1>
       <p class="card-text">In this page you can view the modules table.</p>
    </div>
-</div>
+</section>
 
 <?php
-
       // Build SQL statment that selects a student's modules
       $sql = "select * from studentmodules sm, module m where m.modulecode = sm.modulecode and sm.studentid = '" . $_SESSION['id'] ."';";
 
@@ -46,5 +46,4 @@
    }
 
    echo template("templates/partials/footer.php");
-
 ?>

@@ -15,7 +15,5 @@
     <link href="bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="bootstrap-4.4.1-dist/mdb/css/mdb.min.css" rel="stylesheet">
-    
   </head>
-  
   <body>

@@ -1,7 +1,6 @@
 <!-- Author: Ana Lucia Petinga Zorro 
 CO551 Open Source Systems -->
 <?php
-
    include("_includes/config.inc");
    include("_includes/dbconnect.inc");
    include("_includes/functions.inc");
@@ -15,16 +14,16 @@ CO551 Open Source Systems -->
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
 ?>
+
 <!-- Jumbotron -->
-<div class="container-md">
+<section class="container-md">
    <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
       <h1 class="card-title h1">Students Records</h1>
       <p class="card-text">In this page you can modify the student table by modifying its records.</p>
    </div>
-</div>
+</section>
 
 <?php
-
       // Build SQL statment that selects all student records
       $sql = "SELECT * FROM student;";
 
@@ -47,6 +46,7 @@ CO551 Open Source Systems -->
       $data['content'] .= '<input type="submit" value="Delete">';
       $data['content'] .= "</form>";
 
+      // When the Delete button is clicked
       if (!empty($_POST['delete']))
       {
          foreach($_POST['delete'] as $studentid => $value)
@@ -69,6 +69,7 @@ CO551 Open Source Systems -->
    echo template("templates/partials/footer.php");
 
 ?>
+
 <table class="table table-sm table-dark">
   <thead>
     <tr>

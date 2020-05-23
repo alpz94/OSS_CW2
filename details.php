@@ -1,27 +1,27 @@
+<!-- Author: Ana Lucia Petinga Zorro 
+CO551 Open Source Systems -->
 <?php
+   include("_includes/config.inc");
+   include("_includes/dbconnect.inc");
+   include("_includes/functions.inc");
 
-include("_includes/config.inc");
-include("_includes/dbconnect.inc");
-include("_includes/functions.inc");
 
+   // check logged in
+   if (isset($_SESSION['id'])) {
 
-// check logged in
-if (isset($_SESSION['id'])) {
-
-   echo template("templates/partials/header.php");
-   echo template("templates/partials/nav.php");
+      echo template("templates/partials/header.php");
+      echo template("templates/partials/nav.php");
 ?>
 
 <!-- Jumbotron -->
-<div class="container-md">
+<section class="container-md">
    <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
       <h1 class="card-title h1">My Details</h1>
       <p class="card-text">In this page you can update your details at any time.</p>
    </div>
-</div>
+</section>
 
 <?php
-
    // if the form has been submitted
    if (isset($_POST['submit'])) {
 
@@ -82,5 +82,4 @@ EOD;
 }
 
 echo template("templates/partials/footer.php");
-
 ?>
