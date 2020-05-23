@@ -67,7 +67,6 @@ CO551 Open Source Systems -->
    }
 
    echo template("templates/partials/footer.php");
-
 ?>
 
 <table class="table table-sm table-dark">

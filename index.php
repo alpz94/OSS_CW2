@@ -1,6 +1,6 @@
-
+<!-- Author: Ana Lucia Petinga Zorro 
+CO551 Open Source Systems -->
 <?php
-
    include("_includes/config.inc");
    include("_includes/dbconnect.inc");
    include("_includes/functions.inc");
@@ -14,7 +14,8 @@
    }
 
    if (isset($_SESSION['id'])) {
-      echo template("templates/partials/nav.php");?>
+      echo template("templates/partials/nav.php");
+?>
 
 <!-- Jumbotron -->
 <div class="container-md">
@@ -25,34 +26,34 @@
 </div>
 
 <!-- Carousel -->
-<div class="container-md">
-<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100 h-75" src="/OSS_CW2/img/bucks_new_university.jpg" alt="First slide">
+<section class="container-md">
+  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100 h-75" src="/OSS_CW2/img/bucks_new_university.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 h-75" src="/OSS_CW2/img/bnu.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 h-75" src="/OSS_CW2/img/bnu_logo.jpg" alt="Third slide">
+      </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 h-75" src="/OSS_CW2/img/bnu.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 h-75" src="/OSS_CW2/img/bnu_logo.jpg" alt="Third slide">
-    </div>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-</div>
+</section>
 
    <?php
       echo template("templates/default.php", $data);
