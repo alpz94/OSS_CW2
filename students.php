@@ -40,11 +40,11 @@ CO551 Open Source Systems -->
       while($row = mysqli_fetch_array($result)) {
          $data['content'] .= "<tr><td> $row[studentid] </td><td> $row[dob] </td>";
          $data['content'] .= "<td> $row[firstname] </td><td> $row[lastname] </td>";
-         $data['content'] .= "<td> $row[house] </td><td> $row[town] </td><td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td><td><input type='checkbox' name='delete[$row[studentid]]' /></td></tr>";
+         $data['content'] .= "<td> $row[house] </td><td> $row[town] </td><td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td>";
+         $data['content'] .= "<td><input type='checkbox' name='delete[$row[studentid]]' /></td></tr>";
       }
       $data['content'] .= "</table>";
       $data['content'] .= '<input type="submit" value="Delete">';
-
       $data['content'] .= "</form>";
 
       if (!empty($_POST['delete']))
