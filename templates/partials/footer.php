@@ -1,5 +1,5 @@
     <footer class="small bg-light">
-      <div class="container py-3 py-sm-5">
+      <section class="container py-3 py-sm-5">
         <div class="row">
             <div class="col-4">
                 <h6>Information</h6>
@@ -26,7 +26,7 @@
                 </ul>
             </div>
         </div>
-      </div>
+      </section>
     </footer>
    
     <!-- Optional JavaScript -->
