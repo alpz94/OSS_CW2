@@ -16,8 +16,8 @@ CO551 Open Source Systems -->
 <!-- Jumbotron -->
 <section class="container-md">
    <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
-      <h1 class="card-title h1">Assign Modules</h1>
-      <p class="card-text">In this page you can assign modules when required.</p>
+      <h1 class="card-title h1">Assign Module</h1>
+      <p class="card-text">In this page you can assign a module.</p>
    </div>
 </section>
 

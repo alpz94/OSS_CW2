@@ -5,7 +5,7 @@ CO551 Open Source Systems -->
    include("_includes/dbconnect.inc");
    include("_includes/functions.inc");
 
-   //test what we are getting through in $_POST
+   //test what I get through in $_POST
    //var_dump($_POST);
 
    // check logged in
@@ -24,7 +24,7 @@ CO551 Open Source Systems -->
 </section>
 
 <?php
-      // Build SQL statment that selects all student records
+      // Build SQL statement that selects all student records
       $sql = "SELECT * FROM student;";
 
       $result = mysqli_query($conn,$sql);
