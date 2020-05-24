@@ -36,7 +36,7 @@ CO551 Open Source Systems -->
       $sql .= "where studentid = '" . $_SESSION['id'] . "';";
       $result = mysqli_query($conn,$sql);
 
-      $data['content'] = "<p>Your details have been updated</p>";
+      $data['content'] = "<p>Your details have been updated.</p>";
 
    }
    else {

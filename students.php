@@ -30,6 +30,7 @@ CO551 Open Source Systems -->
       $result = mysqli_query($conn,$sql);
 
       $data['content'] .= "<h2>Students Details</h2><br/>";
+      // Form submitted to script itself
       $data['content'] .= "<form method='post' action=''>";
       // Prepare page content
       $data['content'] .= "<table border='1'>";
@@ -59,7 +60,7 @@ CO551 Open Source Systems -->
 
             $result = mysqli_query($conn,$sql);
 
-            echo "Student = " . $studentid . " has been successfully deleted.<br />";
+            $data['content'] = "<p>Student = " . $studentid . " has been successfully deleted.<br /><br /></p>";
          }
       }
 
