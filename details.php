@@ -51,7 +51,7 @@ CO551 Open Source Systems -->
       // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
 
-   <h2>My Details</h2>
+   <h2>My Details</h2><br/>
    <form name="frmdetails" action="" method="post">
    First Name :
    <input name="txtfirstname" type="text" value="{$row['firstname']}" /><br/>
@@ -66,9 +66,10 @@ CO551 Open Source Systems -->
    Country :
    <input name="txtcountry" type="text"  value="{$row['country']}" /><br/>
    Postcode :
-   <input name="txtpostcode" type="text"  value="{$row['postcode']}" /><br/>
-   <input type="submit" value="Save" name="submit"/>
+   <input name="txtpostcode" type="text"  value="{$row['postcode']}" /><br/></br>
+   <input type="submit" value="Save" name="submit"/><br/></br><br/>
    </form>
+   
 
 EOD;
 

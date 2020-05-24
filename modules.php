@@ -28,6 +28,7 @@ CO551 Open Source Systems -->
       $result = mysqli_query($conn,$sql);
 
       // prepare page content
+      $data['content'] .= "<h2>Modules Table</h2><br/>";
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='5' align='center'>Modules</th></tr>";
       $data['content'] .= "<tr><th>Code</th><th>Type</th><th>Level</th></tr>";
@@ -37,6 +38,7 @@ CO551 Open Source Systems -->
          $data['content'] .= "<td> $row[level] </td></tr>";
       }
       $data['content'] .= "</table>";
+      $data['content'] .="</br></br>";
 
       // render the template
       echo template("templates/default.php", $data);

@@ -16,7 +16,7 @@ CO551 Open Source Systems -->
 <!-- Jumbotron -->
 <section class="container-md">
    <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
-      <h1 class="card-title h1">Add a New Student</h1>
+      <h1 class="card-title h1">Add New Student</h1>
       <p class="card-text">In this page you can add a new student.</p>
    </div>
 </section>
@@ -44,7 +44,7 @@ CO551 Open Source Systems -->
       // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
 
-   <h2>Add New Student</h2>
+   <h2>Add New Student</h2><br/>
    <form name="frmaddstudent" action="" method="post">
    Student ID :
    <input name="txtstudentid" type="text" /><br/>
@@ -65,8 +65,8 @@ CO551 Open Source Systems -->
    Country :
    <input name="txtcountry" type="text"  /><br/>
    Postcode :
-   <input name="txtpostcode" type="text"  /><br/>
-   <input type="submit" value="Save" name="submit"/>
+   <input name="txtpostcode" type="text"  /><br/><br/>
+   <input type="submit" value="Save" name="submit"/><br/></br><br/>
    </form>
 
 EOD;

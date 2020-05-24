@@ -29,6 +29,7 @@ CO551 Open Source Systems -->
 
       $result = mysqli_query($conn,$sql);
 
+      $data['content'] .= "<h2>Students Details</h2><br/>";
       $data['content'] .= "<form method='post' action=''>";
       // prepare page content
       $data['content'] .= "<table border='1'>";
@@ -43,8 +44,11 @@ CO551 Open Source Systems -->
          $data['content'] .= "<td><input type='checkbox' name='delete[$row[studentid]]' /></td></tr>";
       }
       $data['content'] .= "</table>";
+      $data['content'] .="</br>";
       $data['content'] .= '<input type="submit" value="Delete">';
+      $data['content'] .="</br>";
       $data['content'] .= "</form>";
+      $data['content'] .="</br></br>";
 
       // When the Delete button is clicked
       if (!empty($_POST['delete']))
