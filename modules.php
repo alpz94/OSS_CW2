@@ -6,7 +6,7 @@ CO551 Open Source Systems -->
    include("_includes/functions.inc");
 
 
-   // check logged in
+   // Check logged in
    if (isset($_SESSION['id'])) {
 
       echo template("templates/partials/header.php");
@@ -27,7 +27,7 @@ CO551 Open Source Systems -->
 
       $result = mysqli_query($conn,$sql);
 
-      // prepare page content
+      // Prepare page content
       $data['content'] .= "<h2>Modules Table</h2><br/>";
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='5' align='center'>Modules</th></tr>";
@@ -40,7 +40,7 @@ CO551 Open Source Systems -->
       $data['content'] .= "</table>";
       $data['content'] .="</br></br>";
 
-      // render the template
+      // Render the template
       echo template("templates/default.php", $data);
 
    } else {

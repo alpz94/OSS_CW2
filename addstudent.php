@@ -6,7 +6,7 @@ CO551 Open Source Systems -->
    include("_includes/functions.inc");
 
 
-   // check logged in
+   // Check logged in
    if (isset($_SESSION['id'])) {
 
       echo template("templates/partials/header.php");
@@ -22,16 +22,16 @@ CO551 Open Source Systems -->
 </section>
 
 <?php
-   // if the form has been submitted
+   // If the form has been submitted
    if (isset($_POST['submit'])) {
 
-      // Build SQL prepared statment that that inserts the student details
+      // Build SQL prepared statement that that inserts the student details
       $stmt = $conn->prepare("INSERT INTO student (studentid, password, dob, firstname, lastname, house, town, county, country, postcode) VALUES (?,?,?,?,?,?,?,?,?,?)");
-      //attach variables to the dummy values in the prepared template
+      // Attaching variables to the dummy values in the prepared template
       // 's' specifies the variable type will be a 'string'
       $stmt->bind_param("ssssssssss", $_POST['txtstudentid'], $_POST['txtpassword'], $_POST['txtdob'], $_POST['txtfirstname'],
       $_POST['txtlastname'], $_POST['txthouse'], $_POST['txttown'], $_POST['txtcounty'],$_POST['txtcountry'], $_POST['txtpostcode']);
-      //executing the code
+      // Executing the code
       $stmt->execute();
       $stmt->close();
       
@@ -39,9 +39,9 @@ CO551 Open Source Systems -->
       $data['content'] = "<p>Your details have been updated</p>";
    }
    else {
-      // using <<<EOD notation to allow building of a multi-line string
-      // see http://stackoverflow.com/questions/6924193/what-is-the-use-of-eod-in-php for info
-      // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
+      // Using <<<EOD notation to allow building of a multi-line string
+      // See http://stackoverflow.com/questions/6924193/what-is-the-use-of-eod-in-php for info
+      // Also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
 
    <h2>Add New Student</h2><br/>
@@ -66,14 +66,14 @@ CO551 Open Source Systems -->
    <input name="txtcountry" type="text"  /><br/>
    Postcode :
    <input name="txtpostcode" type="text"  /><br/><br/>
-   <input type="submit" value="Save" name="submit"/><br/></br><br/>
+   <input type="submit" value="Insert" name="submit"/><br/></br><br/>
    </form>
 
 EOD;
 
    }
 
-   // render the template
+   // Render the template
    echo template("templates/default.php", $data);
 
 } else {

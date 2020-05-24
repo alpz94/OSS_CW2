@@ -5,10 +5,10 @@ CO551 Open Source Systems -->
    include("_includes/dbconnect.inc");
    include("_includes/functions.inc");
 
-   //test what I get through in $_POST
+   // Test what I get through in $_POST
    //var_dump($_POST);
 
-   // check logged in
+   // Check logged in
    if (isset($_SESSION['id'])) {
 
       echo template("templates/partials/header.php");
@@ -31,7 +31,7 @@ CO551 Open Source Systems -->
 
       $data['content'] .= "<h2>Students Details</h2><br/>";
       $data['content'] .= "<form method='post' action=''>";
-      // prepare page content
+      // Prepare page content
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='10' align='center'>Student</th></tr>";
       $data['content'] .= "<tr><th>Student ID</th><th>DOB</th><th>First Name</th>
@@ -63,7 +63,7 @@ CO551 Open Source Systems -->
          }
       }
 
-      // render the template
+      // Render the template
       echo template("templates/default.php", $data);
 
    } else {

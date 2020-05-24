@@ -6,7 +6,7 @@ CO551 Open Source Systems -->
    include("_includes/functions.inc");
 
 
-   // check logged in
+   // Check logged in
    if (isset($_SESSION['id'])) {
 
       echo template("templates/partials/header.php");
@@ -22,10 +22,10 @@ CO551 Open Source Systems -->
 </section>
 
 <?php
-   // if the form has been submitted
+   // If the form has been submitted
    if (isset($_POST['submit'])) {
 
-      // build an sql statment to update the student details
+      // Build a SQL statement to update the student details
       $sql = "update student set firstname ='" . $_POST['txtfirstname'] . "',";
       $sql .= "lastname ='" . $_POST['txtlastname']  . "',";
       $sql .= "house ='" . $_POST['txthouse']  . "',";
@@ -40,15 +40,15 @@ CO551 Open Source Systems -->
 
    }
    else {
-      // Build a SQL statment to return the student record with the id that
+      // Build a SQL statement to return the student record with the id that
       // matches that of the session variable.
       $sql = "select * from student where studentid='". $_SESSION['id'] . "';";
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result);
 
-      // using <<<EOD notation to allow building of a multi-line string
-      // see http://stackoverflow.com/questions/6924193/what-is-the-use-of-eod-in-php for info
-      // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
+      // Using <<<EOD notation to allow building of a multi-line string
+      // See http://stackoverflow.com/questions/6924193/what-is-the-use-of-eod-in-php for info
+      // Also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
 
    <h2>My Details</h2><br/>
@@ -75,7 +75,7 @@ EOD;
 
    }
 
-   // render the template
+   // Render the template
    echo template("templates/default.php", $data);
 
 } else {

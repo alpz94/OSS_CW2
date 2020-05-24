@@ -1,3 +1,5 @@
+<!-- Author: Ana Lucia Petinga Zorro 
+CO551 Open Source Systems -->
     <footer class="small bg-light">
       <section class="container py-3 py-sm-5">
         <div class="row">
