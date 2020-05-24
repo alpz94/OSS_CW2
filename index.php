@@ -54,6 +54,7 @@ CO551 Open Source Systems -->
     </a>
   </div>
 </section>
+   </br></br>
 
    <?php
       echo template("templates/default.php", $data);
@@ -62,7 +63,4 @@ CO551 Open Source Systems -->
    }
 
    echo template("templates/partials/footer.php");
-
-   // another test edit
-
 ?>

@@ -23,7 +23,7 @@ CO551 Open Source Systems -->
 
 <?php
    // If the form has been submitted
-   if (isset($_POST['submit'])) {
+   if (isset($_POST['btninsert'])) {
 
       // Build SQL prepared statement that inserts the student details (mysqli)
       $stmt = $conn->prepare("INSERT INTO student (studentid, password, dob, firstname, lastname, house, town, county, country, postcode) VALUES (?,?,?,?,?,?,?,?,?,?)");
@@ -42,30 +42,74 @@ CO551 Open Source Systems -->
       // Also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
 
-   <h2>Add New Student</h2><br/>
-   <form name="frmaddstudent" action="" method="post">
-   Student ID :
-   <input name="txtstudentid" type="text" /><br/>
-   Password :
-   <input name="txtpassword" type="password" /><br/>
-   Date of Birth :
-   <input name="txtdob" type="date"/><br/>
-   First Name :
-   <input name="txtfirstname" type="text" /><br/>
-   Last Name :
-   <input name="txtlastname" type="text"  /><br/>
-   Number and Street :
-   <input name="txthouse" type="text"  /><br/>
-   Town :
-   <input name="txttown" type="text"  /><br/>
-   County :
-   <input name="txtcounty" type="text"  /><br/>
-   Country :
-   <input name="txtcountry" type="text"  /><br/>
-   Postcode :
-   <input name="txtpostcode" type="text"  /><br/><br/>
-   <input type="submit" value="Insert" name="submit"/><br/></br><br/>
-   </form>
+    <h2>Add New Student</h2><br/>
+    <form class="form-horizontal" name="frmaddstudent" action="" method="post">
+        <section class="form-group">
+            <section class="form-group row">
+                <label for="studentid" class="col-sm-2 col-form-label">Student ID</label>
+                <div class="col-sm-4">
+                    <input name="txtstudentid" type="text" class="form-control" id="studentid">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-4">
+                    <input name="txtpassword" type="password" class="form-control" id="inputpassword">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+                <div class="col-sm-4">
+                    <input name="txtdob" type="date" class="form-control" id="dob">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+                <div class="col-sm-4">
+                    <input name="txtfirstname" type="text" class="form-control" id="firstname">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+                <div class="col-sm-4">
+                    <input name="txtlastname" type="text" class="form-control" id="lastname">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="house" class="col-sm-2 col-form-label">Street</label>
+                <div class="col-sm-4">
+                    <input name="txthouse" type="text" class="form-control" id="house">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="town" class="col-sm-2 col-form-label">Town</label>
+                <div class="col-sm-4">
+                    <input name="txttown" type="text" class="form-control" id="town">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="county" class="col-sm-2 col-form-label">County</label>
+                <div class="col-sm-4">
+                    <input name="txtcounty" type="text" class="form-control" id="county">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="country" class="col-sm-2 col-form-label">Country</label>
+                <div class="col-sm-4">
+                    <input name="txtcountry" type="text" class="form-control" id="country">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="postcode" class="col-sm-2 col-form-label">Postcode</label>
+                <div class="col-sm-4">
+                    <input name="txtpostcode" type="text" class="form-control" id="postcode">
+                </div>
+            </section>
+        </section>
+        <section class="form-group">
+            <button type="submit" value="Insert" name="btninsert" class="btn mdb-color lighten-2 white-text mx-2 mb-5 btn-sm">Insert</button>
+        </section>
+    </form>
 
 EOD;
 

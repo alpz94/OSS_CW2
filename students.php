@@ -30,13 +30,13 @@ CO551 Open Source Systems -->
       $result = mysqli_query($conn,$sql);
 
       $data['content'] .= "<h2>Students Details</h2><br/>";
-      // Form submitted to script itself
+      // Form submitted to script itself (students.php)
       $data['content'] .= "<form method='post' action=''>";
       // Prepare page content
-      $data['content'] .= "<table border='1'>";
+      $data['content'] .= "<table class='table table-hover'>";
       $data['content'] .= "<tr><th colspan='10' align='center'>Student</th></tr>";
-      $data['content'] .= "<tr><th>Student ID</th><th>DOB</th><th>First Name</th>
-      <th>Last Name</th><th>House</th><th>Town</th><th>County</th><th>Country</th><th>Postcode</th><th>Select</th></tr>";
+      $data['content'] .= "<tr><th>ID No</th><th>DOB</th><th>Forename</th>
+      <th>Surname</th><th>House</th><th>Town</th><th>County</th><th>Country</th><th>Postcode</th><th>Select</th></tr>";
       // Display the students within the html table
       while($row = mysqli_fetch_array($result)) {
          $data['content'] .= "<tr><td> $row[studentid] </td><td> $row[dob] </td>";
@@ -44,11 +44,31 @@ CO551 Open Source Systems -->
          $data['content'] .= "<td> $row[house] </td><td> $row[town] </td><td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td>";
          $data['content'] .= "<td><input type='checkbox' name='delete[$row[studentid]]' /></td></tr>";
       }
-      $data['content'] .= "</table>";
-      $data['content'] .="</br>";
-      $data['content'] .= '<input type="submit" value="Delete">';
-      $data['content'] .="</br>";
+      $data['content'] .= "</table></br>"; // End of table
+
+      $data['content'] .="<div class='container'>";
+      $data['content'] .="<div class='row'>";
+      $data['content'] .="<div class='col-1'>";
+      // Delete Button
+      $data['content'] .="<section class='form-group'>";
+      $data['content'] .="<button type='submit' value='Delete' name='btndelete' class='btn mdb-color lighten-2 white-text mx-2 mb-5 btn-sm'><i class='fas fa-user-minus'></i></button>"; 
+      $data['content'] .="</section>";
       $data['content'] .= "</form>";
+
+      $data['content'] .="</div>";
+      $data['content'] .="<div class='col-1'>";
+      // Form submitted to script addstudent.php (add button)
+      $data['content'] .= "<form action='addstudent.php' method='post'>";
+      $data['content'] .="<section class='form-group'>";
+      $data['content'] .="<button type='submit' value='Add' name='btnaddstudent' class='btn mdb-color lighten-2 white-text mx-2 mb-5 btn-sm'><i class='fas fa-user-plus'></i></button>";    
+      $data['content'] .="</section>";
+      $data['content'] .="</div>";
+      $data['content'] .="</div>";
+      $data['content'] .="</div>";
+      
+      
+      $data['content'] .= "</form>";
+      
       $data['content'] .="</br></br>";
 
       // When the Delete button is clicked
@@ -73,33 +93,3 @@ CO551 Open Source Systems -->
 
    echo template("templates/partials/footer.php");
 ?>
-
-<table class="table table-sm table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>

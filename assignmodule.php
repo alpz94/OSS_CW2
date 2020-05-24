@@ -38,7 +38,7 @@ CO551 Open Source Systems -->
    $data['content'] .= "<form name='frmassignmodule' action='' method='post' >";
    $data['content'] .= "<h2>Select a Module to Assign</h2><br/>";
    $data['content'] .= "<select name='selmodule' >";
-   // Display the module name sin a drop down selection box
+   // Display the module name in a drop down selection box
    while($row = mysqli_fetch_array($result)) {
       $data['content'] .= "<option value='$row[modulecode]'>$row[name]</option>";
    }
