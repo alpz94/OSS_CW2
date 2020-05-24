@@ -10,6 +10,9 @@
         <a class="nav-link text-white" href="students.php">Student Records</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-white" href="addstudent.php">Add Student</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link text-white" href="modules.php">My Modules</a>
       </li>
       <li class="nav-item">
