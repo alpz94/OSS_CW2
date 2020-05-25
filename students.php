@@ -46,7 +46,7 @@ CO551 Open Source Systems -->
       }
       $data['content'] .= "</table></br>"; // End of table
 
-      $data['content'] .="<div class='container'>";
+      $data['content'] .="<section class='container'>";
       $data['content'] .="<div class='row'>";
       $data['content'] .="<div class='col-1'>";
       // Delete Button
@@ -64,12 +64,8 @@ CO551 Open Source Systems -->
       $data['content'] .="</section>";
       $data['content'] .="</div>";
       $data['content'] .="</div>";
-      $data['content'] .="</div>";
-      
-      
+      $data['content'] .="</section>";
       $data['content'] .= "</form>";
-      
-      $data['content'] .="</br></br>";
 
       // When the Delete button is clicked
       if (!empty($_POST['delete']))

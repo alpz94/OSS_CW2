@@ -25,12 +25,12 @@ CO551 Open Source Systems -->
    // If the form has been submitted
    if (isset($_POST['submit'])) {
 
-      // Build SQL prepared statement that updates the student details (mysqli)
+      /* // Build SQL prepared statement that updates the student details (mysqli)
       $stmt = $conn->prepare ("UPDATE student set firstname = ? WHERE id = ?");
       $stmt->bind_param("si", $_POST['txtfirstname'], $_SESSION['id']);
       $stmt->execute();
 
-     //$stmt->close();
+     //$stmt->close(); */
 
 
       // Build a SQL statement to update the student details
@@ -75,7 +75,9 @@ CO551 Open Source Systems -->
    <input name="txtcountry" type="text"  value="{$row['country']}" /><br/>
    Postcode :
    <input name="txtpostcode" type="text"  value="{$row['postcode']}" /><br/></br>
-   <input type="submit" value="Save" name="submit"/><br/></br><br/>
+   <section class="form-group">
+      <input type="submit" value="Save" name="submit" class="btn mdb-color lighten-2 white-text mx-2 mb-5 btn-sm">
+   </section>
    </form>
    
 

@@ -37,13 +37,20 @@ CO551 Open Source Systems -->
 
    $data['content'] .= "<form name='frmassignmodule' action='' method='post' >";
    $data['content'] .= "<h2>Select a Module to Assign</h2><br/>";
-   $data['content'] .= "<select name='selmodule' >";
+   $data['content'] .= "<section class='form-group'>";
+   $data['content'] .= "<section class='col-sm-4'>";
+   $data['content'] .= "<select class='form-control' name='selmodule' id='Select'>";
+   //$data['content'] .= "<select name='selmodule' >";
    // Display the module name in a drop down selection box
    while($row = mysqli_fetch_array($result)) {
       $data['content'] .= "<option value='$row[modulecode]'>$row[name]</option>";
    }
-   $data['content'] .= "</select><br/><br/>";
-   $data['content'] .= "<input type='submit' name='confirm' value='Save' /><br/><br/><br/>";
+   $data['content'] .= "</select>";
+   $data['content'] .= "</section>";
+   $data['content'] .= "</section><br/><br/>";
+   $data['content'] .= "<section class='form-group'>";
+   $data['content'] .= "<input type='submit' value='Save' name='confirm' class='btn mdb-color lighten-2 white-text mx-2 mb-5 btn-sm'><br/><br/><br/>";
+   $data['content'] .= "</section>";
    $data['content'] .= "</form>";
    }
 
