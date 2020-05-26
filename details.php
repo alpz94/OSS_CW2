@@ -25,7 +25,7 @@ CO551 Open Source Systems -->
    // If the form has been submitted
    if (isset($_POST['submit'])) {
 
-      // Build SQL prepared statement that updates the users details
+      /* // Build A SQL prepared statement that updates the users details
       // 's' specifies the variable type will be a 'string'
       $stmt = $conn->prepare("UPDATE student SET firstname = ?, 
       lastname = ?, 
@@ -44,9 +44,9 @@ CO551 Open Source Systems -->
       $_POST['txtcountry'], 
       $_POST['txtpostcode'], 
       $_SESSION['id']);
-      $stmt->execute();
+      $stmt->execute(); */
 
-      /* // Build a SQL statement to update the student details
+      // Build a SQL statement to update the student details
       $sql = "update student set firstname ='" . $_POST['txtfirstname'] . "',";
       $sql .= "lastname ='" . $_POST['txtlastname']  . "',";
       $sql .= "house ='" . $_POST['txthouse']  . "',";
