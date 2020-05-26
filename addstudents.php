@@ -25,14 +25,12 @@ CO551 Open Source Systems -->
    // If the form has been submitted
    if (isset($_POST['btninsert'])) {
 
-      // Build SQL prepared statement that inserts the student details (mysqli)
-      $stmt = $conn->prepare("INSERT INTO student (studentid, password, dob, firstname, lastname, house, town, county, country, postcode) VALUES (?,?,?,?,?,?,?,?,?,?)");
-      // 's' specifies the variable type will be a 'string'
-      $stmt->bind_param("ssssssssss", $_POST['txtstudentid'], $_POST['txtpassword'], $_POST['txtdob'], $_POST['txtfirstname'],
-      $_POST['txtlastname'], $_POST['txthouse'], $_POST['txttown'], $_POST['txtcounty'],$_POST['txtcountry'], $_POST['txtpostcode']);
-      $stmt->execute();
-      $stmt->close();
-      
+      // Build SQL statement that inserts the new student record
+      $sql = "INSERT INTO student (studentid, firstname, lastname, house, town, county, country postcode)";
+      $sql = $sql . " values ('$_POST[txtstudentid]', '$_POST['txtpassword']', '$_POST['txtdob']', '$_POST[txtfirstname]', '$_POST[txtlastname]', '$_POST[txthouse]', 
+      '$_POST[txttown]', '$_POST[txtcounty]', '$_POST[txtcountry]', '$_POST[txtpostcode]')"; 
+
+      $result = mysqli_query($conn,$sql);
       
       $data['content'] = "<p>A new student has been added.</p>";
    }
