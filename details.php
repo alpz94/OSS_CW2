@@ -25,7 +25,28 @@ CO551 Open Source Systems -->
    // If the form has been submitted
    if (isset($_POST['submit'])) {
 
-      // Build a SQL statement to update the student details
+      // Build SQL prepared statement that updates the users details
+      // 's' specifies the variable type will be a 'string'
+      $stmt = $conn->prepare("UPDATE student SET firstname = ?, 
+      lastname = ?, 
+      house = ?, 
+      town = ?, 
+      county = ?, 
+      country = ?, 
+      postcode = ?) 
+      WHERE studentid = ?");
+      $stmt->bind_param("ssssssss", 
+      $_POST['txtfirstname'], 
+      $_POST['txtlastname'], 
+      $_POST['txthouse'], 
+      $_POST['txttown'], 
+      $_POST['txtcounty'], 
+      $_POST['txtcountry'], 
+      $_POST['txtpostcode'], 
+      $_SESSION['id']);
+      $stmt->execute();
+
+      /* // Build a SQL statement to update the student details
       $sql = "update student set firstname ='" . $_POST['txtfirstname'] . "',";
       $sql .= "lastname ='" . $_POST['txtlastname']  . "',";
       $sql .= "house ='" . $_POST['txthouse']  . "',";
@@ -34,7 +55,7 @@ CO551 Open Source Systems -->
       $sql .= "country ='" . $_POST['txtcountry']  . "',";
       $sql .= "postcode ='" . $_POST['txtpostcode']  . "' ";
       $sql .= "where studentid = '" . $_SESSION['id'] . "';";
-      $result = mysqli_query($conn,$sql);
+      $result = mysqli_query($conn,$sql); */
 
       $data['content'] = "<p>Your details have been updated.</p>";
 

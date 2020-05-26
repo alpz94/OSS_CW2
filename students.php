@@ -72,9 +72,15 @@ CO551 Open Source Systems -->
       {
          foreach($_POST['delete'] as $studentid => $value)
          {
-            $sql = "DELETE FROM student WHERE studentid= '$studentid';";
+            // Protecting against injection using MySQLi prepared statement
+            // 's' specifies the variable type will be an 'string'
+            $stmt = $conn->prepare("DELETE FROM student WHERE studentid= ?");
+            $stmt->bind_param("s", $studentid);
+            $stmt->execute();
 
-            $result = mysqli_query($conn,$sql);
+            /* $sql = "DELETE FROM student WHERE studentid= '$studentid';";
+
+               $result = mysqli_query($conn,$sql); */
 
             $data['content'] = "<p>Student = " . $studentid . " has been successfully deleted.<br /><br /></p>";
          }
