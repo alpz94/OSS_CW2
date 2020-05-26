@@ -60,26 +60,55 @@ CO551 Open Source Systems -->
       $data['content'] = <<<EOD
 
    <h2>My Details</h2><br/>
-   <form name="frmdetails" action="" method="post">
-   First Name :
-   <input name="txtfirstname" type="text" value="{$row['firstname']}" /><br/>
-   Surname :
-   <input name="txtlastname" type="text"  value="{$row['lastname']}" /><br/>
-   Number and Street :
-   <input name="txthouse" type="text"  value="{$row['house']}" /><br/>
-   Town :
-   <input name="txttown" type="text"  value="{$row['town']}" /><br/>
-   County :
-   <input name="txtcounty" type="text"  value="{$row['county']}" /><br/>
-   Country :
-   <input name="txtcountry" type="text"  value="{$row['country']}" /><br/>
-   Postcode :
-   <input name="txtpostcode" type="text"  value="{$row['postcode']}" /><br/></br>
-   <section class="form-group">
-      <input type="submit" value="Save" name="submit" class="btn mdb-color lighten-2 white-text mx-2 mb-5 btn-sm">
-   </section>
-   </form>
-   
+    <form class="form-horizontal" name="frmdetails" action="" method="post">
+        <section class="form-group">
+            <section class="form-group row">
+                <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+                <div class="col-sm-4">
+                    <input name="txtfirstname" type="text" value="{$row['firstname']}" class="form-control" id="firstname">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+                <div class="col-sm-4">
+                    <input name="txtlastname" type="text" value="{$row['lastname']}" class="form-control" id="lastname">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="house" class="col-sm-2 col-form-label">Street</label>
+                <div class="col-sm-4">
+                    <input name="txthouse" type="text" value="{$row['house']}" class="form-control" id="house">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="town" class="col-sm-2 col-form-label">Town</label>
+                <div class="col-sm-4">
+                    <input name="txttown" type="text" value="{$row['town']}" class="form-control" id="town">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="county" class="col-sm-2 col-form-label">County</label>
+                <div class="col-sm-4">
+                    <input name="txtcounty" type="text" value="{$row['county']}" class="form-control" id="county">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="country" class="col-sm-2 col-form-label">Country</label>
+                <div class="col-sm-4">
+                    <input name="txtcountry" type="text" value="{$row['country']}" class="form-control" id="country">
+                </div>
+            </section>
+            <section class="form-group row">
+                <label for="postcode" class="col-sm-2 col-form-label">Postcode</label>
+                <div class="col-sm-4">
+                    <input name="txtpostcode" type="text" value="{$row['postcode']}" class="form-control" id="postcode">
+                </div>
+            </section>
+        </section>
+        <section class="form-group">
+            <input type="submit" value="Save" name="submit" class="btn mdb-color lighten-2 white-text mx-2 mb-5 btn-sm">
+        </section>
+    </form>
 
 EOD;
 
