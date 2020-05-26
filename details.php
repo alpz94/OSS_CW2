@@ -25,14 +25,6 @@ CO551 Open Source Systems -->
    // If the form has been submitted
    if (isset($_POST['submit'])) {
 
-      /* // Build SQL prepared statement that updates the student details (mysqli)
-      $stmt = $conn->prepare ("UPDATE student set firstname = ? WHERE id = ?");
-      $stmt->bind_param("si", $_POST['txtfirstname'], $_SESSION['id']);
-      $stmt->execute();
-
-     //$stmt->close(); */
-
-
       // Build a SQL statement to update the student details
       $sql = "update student set firstname ='" . $_POST['txtfirstname'] . "',";
       $sql .= "lastname ='" . $_POST['txtlastname']  . "',";
